@@ -1,0 +1,17 @@
+<div class="row departments">
+  <!--TODO: pull in the page header from other pages
+  Examples: sign in, find a store, gallery, department
+  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-3 gallery-product" ng-repeat="department in departmentsVm.departmentList track by $index">
+          <a class="thumb" ng-click="departmentsVm.departmentClicked(department)">
+            <img ng-if="::department.image" ng-src="/images/{{::department.image}}" alt="{{::department.name}}" err-img-src="/images/img-not-available.jpg" class="img-responsive gallery-img" />
+            <p><a href="#" class="item_add"><span class=
+                " item_price">${{department.price}}</span></a></p>
+            <button type="button" class="btn btn-danger" ng-click="departmentsVm.addToCart(department)"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>

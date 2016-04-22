@@ -1,0 +1,32 @@
+<div class="showcase-grid">
+    <div class="container">
+        <div class="col-md-8">
+            <div class="thumb-image"> <img src="images/show.jpg" data-imagezoom="true" class="img-responsive"> </div>
+        </div>
+        <div class="col-md-4">
+            <div class="">
+                <div class="pull-left">
+                    <h3>{{productVm.product.title}}</h3>
+                    <p>{{productVm.product.subtitle}}</p>
+                    <h4>&#36; {{productVm.product.price}}</h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <hr>
+            <h4>QTY</h4>
+            <select class="form-control quantity"  ng-init="selectedQuantity = quantity[0]" ng-model="selectedQuantity" ng-options="item for item in quantity"></select>
+            <button type="button" class="btn btn-danger product-button" ng-click="productVm.addCart(selectedQuantity)"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+            <div class="clearfix"></div>
+            <div class="showcase-last">
+                <h3>product details</h3>
+                <ul>
+                    <li>{{productVm.product.description1}}</li>
+                    <li>{{productVm.product.description2}}</li>
+                    <li>{{productVm.product.description3}}</li>
+                    <li>{{productVm.product.description4}}</li>
+                </ul>
+            </div>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+</div>

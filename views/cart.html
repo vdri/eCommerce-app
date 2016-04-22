@@ -1,0 +1,30 @@
+<h3> Shopping Bag </h3>
+<hr>
+<div class="cart-header container" ng-repeat="department in cartVm.cartList|cartFilter as filtered">
+    <div class="row">
+    <div class="col-sm-12">
+    <div class="close pull-right" ng-click="cartVm.removeItem(department)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+        <div class="cart-item">
+            <img ng-src="/images/{{::department.image}}" class="img-responsive" alt=""/>
+        </div>
+       <div class="cart-item-info">
+            <ul class="qty">
+                <li><p>Qty : {{department.quantity}}</p></li>
+                <li><p>Price each : ${{department.price}}</p></li>
+            </ul>
+            <div class="delivery">
+                 <span>Delivered in 2-3 bussiness days</span>
+                 <div class="clearfix"></div>
+            </div>	
+       </div>
+    </div>
+    </div>
+    </div>
+</div>
+<div ng-show="filtered.length > 0">
+    <a href="#/checkout" class="btn btn-danger checkout-button">Check Out</a>
+</div>
+
+<div ng-show="filtered.length == 0">
+    <a href="#/home" class="btn btn-danger checkout-button">Start Shopping, Your cart is empty</a>
+</div>
